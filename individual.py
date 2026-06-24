@@ -1,4 +1,5 @@
 import pandas as pd
+import math
 
 file_path = "ojt_files/6140.xlsx"
 HOURS_REQUIRED = 320
@@ -53,6 +54,8 @@ hours_left = max(0.0, HOURS_REQUIRED - total_hours)
 hours_left = round(hours_left, 2)
 
 percent_complete = round((total_hours / HOURS_REQUIRED) * 100, 2) if HOURS_REQUIRED > 0 else 0.0
+remaining_days = math.ceil(hours_left / 8)
 
 print(f"Hours Remaining    : {hours_left:.2f}")
 print(f"Percent Complete   : {percent_complete:.2f}%")
+print(f"Remaining Days    : {remaining_days}")
